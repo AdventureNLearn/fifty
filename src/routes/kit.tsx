@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { TEMPLATES, WEEKDAY_TARGETS } from "@/lib/data/comments";
 import { DAILY_RULE, JOIN_EMAIL, JOIN_MAILTO, JOIN_SUBJECT, RECRUIT_POST } from "@/lib/data/petition";
+import { SITE } from "@/lib/data/site";
 import { Button } from "@/components/ui/button";
 import { useDesk } from "@/lib/store";
 import { Copy } from "lucide-react";
@@ -19,8 +20,11 @@ function KitPage() {
         The kit.
       </h1>
       <p className="mt-4 text-base leading-relaxed text-muted">
-        {DAILY_RULE.what} {DAILY_RULE.cadence} Do not automate it. Do not
-        vandalize a pole. Copy, paste, one post a day.
+        {DAILY_RULE.what} {DAILY_RULE.cadence} Any state. Do not automate it.
+        Do not vandalize a pole. Copy, paste, one post a day.
+      </p>
+      <p className="mt-3 text-sm leading-relaxed text-faint">
+        {SITE.independence}
       </p>
 
       <section className="mt-8 rounded-lg bg-paper p-5 shadow-[inset_0_0_0_1px_var(--color-rule)]">
@@ -92,6 +96,14 @@ function KitPage() {
           ))}
         </ul>
       </section>
+      <p className="mt-12 text-sm leading-relaxed text-faint">
+        This page is the daily comment bank. The research desk — file, tens,
+        merge, copyable prompts for Grok and Grok Build — is{" "}
+        <Link to="/method" className="text-muted underline-offset-4 hover:underline">
+          Method
+        </Link>
+        .
+      </p>
     </main>
   );
 }

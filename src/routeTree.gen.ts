@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as KitRouteImport } from './routes/kit'
+import { Route as MethodRouteImport } from './routes/method'
 import { Route as PetitionRouteImport } from './routes/petition'
 import { Route as SourcesRouteImport } from './routes/sources'
 import { Route as StackRouteImport } from './routes/stack'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const KitRoute = KitRouteImport.update({
   id: '/kit',
   path: '/kit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodRoute = MethodRouteImport.update({
+  id: '/method',
+  path: '/method',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PetitionRoute = PetitionRouteImport.update({
@@ -68,6 +74,7 @@ const StatesCodeRoute = StatesCodeRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/kit': typeof KitRoute
+  '/method': typeof MethodRoute
   '/petition': typeof PetitionRoute
   '/sources': typeof SourcesRoute
   '/stack': typeof StackRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kit': typeof KitRoute
+  '/method': typeof MethodRoute
   '/petition': typeof PetitionRoute
   '/sources': typeof SourcesRoute
   '/stack': typeof StackRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/kit': typeof KitRoute
+  '/method': typeof MethodRoute
   '/petition': typeof PetitionRoute
   '/sources': typeof SourcesRoute
   '/stack': typeof StackRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/kit'
+    | '/method'
     | '/petition'
     | '/sources'
     | '/stack'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/kit'
+    | '/method'
     | '/petition'
     | '/sources'
     | '/stack'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/kit'
+    | '/method'
     | '/petition'
     | '/sources'
     | '/stack'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KitRoute: typeof KitRoute
+  MethodRoute: typeof MethodRoute
   PetitionRoute: typeof PetitionRoute
   SourcesRoute: typeof SourcesRoute
   StackRoute: typeof StackRoute
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/kit'
       fullPath: '/kit'
       preLoaderRoute: typeof KitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/method': {
+      id: '/method'
+      path: '/method'
+      fullPath: '/method'
+      preLoaderRoute: typeof MethodRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/petition': {
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KitRoute: KitRoute,
+  MethodRoute: MethodRoute,
   PetitionRoute: PetitionRoute,
   SourcesRoute: SourcesRoute,
   StackRoute: StackRoute,

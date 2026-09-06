@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { StateBoard } from "@/components/state-board";
 import type { Posture } from "@/lib/types";
 
@@ -29,8 +29,13 @@ function StatesPage() {
       </h1>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
         Each cell is a posture, not a camera count. Executive pause is not a
-        ban. A statute is not always a removal. Empty means this desk has not
-        packed a statewide instrument — not that nothing happened.
+        ban. A statute is not always a removal. Empty means this briefing has
+        not retrieved a statewide instrument — not that nothing happened. No
+        state is the default. How a cell is filled is public:{" "}
+        <Link to="/method" className="text-gulf underline-offset-4 hover:underline">
+          Method
+        </Link>
+        .
       </p>
       <div className="mt-8">
         <StateBoard filter={p} />

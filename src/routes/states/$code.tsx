@@ -6,6 +6,7 @@ import { LANES } from "@/lib/data/stack";
 import { PETITION_URL, JOIN_MAILTO } from "@/lib/data/petition";
 import { TEMPLATES } from "@/lib/data/comments";
 import { useDesk } from "@/lib/store";
+import { ClaimRow } from "@/components/claim-chip";
 
 export const Route = createFileRoute("/states/$code")({
   component: StatePage,
@@ -19,9 +20,9 @@ function StatePage() {
   if (!row) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-12">
-        <h1 className="font-display text-3xl">Not a packed jurisdiction</h1>
+        <h1 className="font-display text-3xl">Not on this board</h1>
         <p className="mt-3 text-muted">
-          {code} is not in this desk.{" "}
+          {code} is not a U.S. state or the District in this briefing.{" "}
           <Link to="/states" className="text-gulf underline-offset-2 hover:underline">
             Back to the board
           </Link>
@@ -52,6 +53,13 @@ function StatePage() {
         {row.name}
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-muted">{row.why}</p>
+      {row.sourceIds && row.sourceIds.length > 0 && (
+        <ClaimRow
+          state={row.claim}
+          kind={row.claim === "supported" ? "evidence" : "assumption"}
+          sourceIds={row.sourceIds}
+        />
+      )}
 
       <dl className="mt-8 space-y-5">
         <Fact k="ALPR statute" v={row.alprStatute} />

@@ -1,18 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  CITIES,
   DAILY_RULE,
   DISCLAIMER,
   JOIN_MAILTO,
   PETITION,
   PETITION_URL,
-  SIGNATURES,
 } from "@/lib/data/petition";
 import { Button } from "@/components/ui/button";
 import { ClaimKindBadge, ClaimStateBadge } from "@/components/ui/badge";
+import {
+  LiveRefreshButton,
+  camerasView,
+  signaturesView,
+} from "@/components/live-refresh";
+import { useLive } from "@/lib/live-store";
 
 export const Route = createFileRoute("/petition")({ component: PetitionPage });
 
 function PetitionPage() {
+  const snapshot = useLive((s) => s.snapshot);
+  const sig = signaturesView(snapshot);
+  const cam = camerasView(snapshot);
+
   return (
     <main className="mx-auto max-w-3xl px-4 py-8 sm:py-12">
       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-gulf">
@@ -40,18 +50,28 @@ function PetitionPage() {
             Signatures
           </dt>
           <dd className="mt-1 font-display text-3xl tabular-nums">
-            {SIGNATURES.count.toLocaleString()}
+            {sig.count.toLocaleString()}
           </dd>
-          <p className="mt-1 text-xs text-muted">as of {SIGNATURES.asOf}</p>
+          <p className="mt-1 text-xs text-muted">
+            {sig.live ? `live · ${sig.asOf}` : `on file · as of ${sig.asOf}`}
+          </p>
         </div>
         <div className="rounded-md bg-paper px-4 py-3 shadow-[inset_0_0_0_1px_var(--color-rule)]">
           <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-faint">
             The math
           </dt>
           <dd className="mt-1 font-display text-3xl">50</dd>
-          <p className="mt-1 text-xs text-muted">not 19,000</p>
+          <p className="mt-1 text-xs text-muted">
+            not {CITIES.count.toLocaleString()} municipal governments
+          </p>
         </div>
       </dl>
+      <p className="mt-3 text-xs leading-relaxed text-faint">
+        Mapped cameras: {cam.count.toLocaleString()}
+        {cam.live ? ` · live floor · ${cam.asOf}` : ` · CRS on file · ${cam.asOf}`}.
+        Crowdsourced. Not a census.
+      </p>
+      <LiveRefreshButton className="mt-4" />
 
       <div className="mt-8 flex flex-col gap-2 sm:flex-row">
         <Button asChild>

@@ -1,24 +1,27 @@
 # FIFTY
 
-Daily-action desk for the state-level ALPR ban.
+**Fifty states. One comment a day.**
 
-**19,000 cities. 50 states. One comment a day.**
+An independent civic briefing for a statewide ban on automated license plate readers — Flock, Axon, and the class.
 
-A city-by-city fight is 19,000 points of change. A state ban is 50.
+A city-by-city fight is more than 19,000 points of change. A state ban is 50. FIFTY exists so any citizen, in any state, can take one lawful public action a day: leave a comment that links the petition.
 
-This is a public briefing. It is not legal advice, not a live camera registry, and not an official [Orwell Day](https://orwellday.com/stop-flock-solution/) product. Claims are labeled. Empty beats a copied instrument from the wrong state.
+This is not legal advice, not a live camera registry, and not an official [Orwell Day](https://orwellday.com/stop-flock-solution/) product. FIFTY supports that petition. It does not speak for the organizer.
 
-## What it is
+## What you can do here
 
-| Desk | What you get |
+| Surface | What you get |
 | --- | --- |
 | Today | One comment, one lane, copy and go |
-| Stack | Jurisdiction × process — city contract ≠ highway permit ≠ statute |
-| States | Fifty legislatures, posture labeled, bills named when they exist |
+| Stack | City → county → state → federal × funding, grants, permitting, installation, privacy, legislation |
+| States | Fifty legislatures. Posture labeled. Empty when nothing is on file. |
 | Kit | Weekday targets and copyable comments |
+| Method | How the board is researched — file, tens, merge; copyable Grok / Grok Build kit |
 | Petition | The ask, the text, the join path |
+| WFTY | Classic rock, Americana, outlaw country, gold hits — on the air while you write |
+| The Good Shepard | Civic advocate. Protector of the Republic. Will not invent a cite. |
 
-The petition itself lives at [orwellday.com/stop-flock-solution](https://orwellday.com/stop-flock-solution/). FIFTY is a map and a daily rule around it.
+The petition lives at [orwellday.com/stop-flock-solution](https://orwellday.com/stop-flock-solution/). FIFTY is a map and a daily rule around it.
 
 ## Honesty
 
@@ -26,6 +29,7 @@ The petition itself lives at [orwellday.com/stop-flock-solution](https://orwelld
 - Kind prints as **evidence / inference / assumption**.
 - Primary records over commentary. A hole stays a hole.
 - A city contract is not a highway permit. A grant is not a statute.
+- No home-state default. Florida’s road order, Texas’s fee pause, Washington’s privacy act — each is one instrument.
 - Do not invent bills, executive orders, or camera counts.
 
 ## Run

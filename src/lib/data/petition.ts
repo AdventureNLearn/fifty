@@ -4,7 +4,28 @@ export const JOIN_SUBJECT = "petition promotion";
 export const JOIN_MAILTO = `mailto:${JOIN_EMAIL}?subject=${encodeURIComponent(JOIN_SUBJECT)}`;
 export const RECRUIT_POST =
   "https://x.com/OrwellDay/status/2096585457593127175";
+
+/** Packed fallback. Live scrape of the petition page can overlay this. */
 export const SIGNATURES = { count: 1642, asOf: "2026-09-04" } as const;
+
+/**
+ * 2025 Census of Governments: 19,489 municipal governments
+ * (cities, boroughs except AK, towns except NE/NY/WI, villages).
+ * 2022 CoG: 19,491. The petition’s “more than 19,000” is the advocacy round.
+ */
+export const CITIES = {
+  count: 19489,
+  asOf: "2025",
+  unit: "municipal governments",
+  note: "Census of Governments. Townships are counted separately (~16,000).",
+} as const;
+
+/** CRS IN12735, end of August 2026. Crowdsourced floor, not a census. Live scrape of Finding Flock can overlay. */
+export const CAMERAS = {
+  count: 137000,
+  asOf: "2026-08",
+  note: "CRS IN12735 citing a crowdsourced map of over 137,000 ALPR cameras, with over 80% attributed to Flock Safety. A floor, not a census.",
+} as const;
 
 export const PETITION = {
   title: "Stop Flock Solution",
@@ -23,4 +44,4 @@ export const DAILY_RULE = {
 } as const;
 
 export const DISCLAIMER =
-  "This desk is a public briefing. It is not legal advice, not a live camera registry, and not an official Orwell Day product. Claims are labeled. Empty beats a copied instrument from the wrong state.";
+  "FIFTY is an independent civic briefing. It supports Orwell Day’s petition. It is not an official Orwell Day product, not legal advice, and not a live camera registry. Claims are labeled. Empty beats a copied instrument from the wrong state. Signature and camera figures can refresh from public pages; state rows are a retrieved briefing, not a live legislature feed.";

@@ -65,6 +65,7 @@ export type StateRow = {
   privacyNote: string | null;
   claim: ClaimState;
   why: string;
+  sourceIds?: string[];
 };
 
 export type CommentTemplate = {
@@ -79,4 +80,17 @@ export type WeekdayTarget = {
   label: string;
   hint: string;
   lane: LaneId | "petition";
+};
+
+export type LiveFigure<T> = {
+  ok: boolean;
+  value: T | null;
+  asOf: string | null;
+  error: string | null;
+};
+
+export type LiveSnapshot = {
+  fetchedAt: string;
+  petition: LiveFigure<{ count: number; asOfLabel: string }>;
+  cameras: LiveFigure<{ count: number; flockShare: string | null; asOfLabel: string }>;
 };

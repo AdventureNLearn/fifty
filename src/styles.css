@@ -27,6 +27,22 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+:root {
+  --nav-h: calc(3.25rem + env(safe-area-inset-bottom));
+  --radio-h: 4.35rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-h: 0px;
+    --radio-h: 4.35rem;
+  }
+}
+
+[data-shepard="open"] {
+  --nav-h: 0px;
+}
+
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
@@ -76,4 +92,58 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.radio-onair {
+  animation: onair 1.8s var(--ease-out) infinite;
+}
+
+@keyframes onair {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.shepard-wait {
+  animation: onair 1.6s var(--ease-out) infinite;
+}
+
+.radio-fader {
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-rule);
+  outline: none;
+}
+
+.radio-fader::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-fg);
+}
+
+.radio-fader::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-fg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

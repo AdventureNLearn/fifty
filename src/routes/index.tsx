@@ -2,17 +2,26 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { TodayCard } from "@/components/today-card";
 import { StackLegend } from "@/components/stack-matrix";
 import { DISCLAIMER, DAILY_RULE, PETITION } from "@/lib/data/petition";
+import { SITE } from "@/lib/data/site";
 import { postureCounts } from "@/lib/data/states";
 import { PostureBadge } from "@/components/ui/badge";
+import { RADIO, STATIONS } from "@/lib/data/stations";
+import { SHEPARD } from "@/lib/shepard";
+import { useShepard } from "@/lib/shepard-store";
+import { useRadio } from "@/lib/radio-store";
+import { startRadio } from "@/lib/radio-engine";
 
 export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
   const counts = postureCounts();
+  const setOpen = useShepard((s) => s.setOpen);
+  const setWantPlay = useRadio((s) => s.setWantPlay);
+  const setStation = useRadio((s) => s.setStation);
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-gulf">
-        {DAILY_RULE.cadence}
+        {SITE.kicker}
       </p>
       <h1 className="mt-3 max-w-3xl font-display text-4xl font-medium tracking-tight sm:text-6xl">
         19,000 cities.
@@ -22,8 +31,28 @@ function Home() {
         One comment a day.
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-        {PETITION.thesis} {DAILY_RULE.what} {DAILY_RULE.update}
+        {PETITION.thesis} {DAILY_RULE.what} {DAILY_RULE.cadence} Any state. Same
+        action.
       </p>
+      <div className="mt-6 flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => {
+            setStation(STATIONS[0].id);
+            void startRadio(STATIONS[0].id).then((ok) => setWantPlay(ok));
+          }}
+          className="inline-flex min-h-11 items-center rounded-sm px-3 font-mono text-[11px] uppercase tracking-[0.14em] text-fg shadow-[inset_0_0_0_1px_var(--color-rule)] hover:bg-paper"
+        >
+          {RADIO.call} on air
+        </button>
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="inline-flex min-h-11 items-center rounded-sm px-3 font-mono text-[11px] uppercase tracking-[0.14em] text-fg shadow-[inset_0_0_0_1px_var(--color-rule)] hover:bg-paper"
+        >
+          Ask {SHEPARD.name}
+        </button>
+      </div>
 
       <div className="mt-10">
         <TodayCard />
@@ -101,8 +130,9 @@ function Home() {
           ))}
         </ul>
         <p className="mt-4 text-sm text-muted">
-          Empty is a finding. A state marked “not retrieved” has no packed ban,
-          bill, or executive order in this desk — not “nothing happened.”
+          Empty is a finding. “Not retrieved” means this briefing has no
+          statewide instrument on file — not that nothing happened. A retention
+          statute is not a ban. No state is the default.
         </p>
       </section>
 

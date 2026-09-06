@@ -2,11 +2,7 @@ import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ClaimKindBadge, ClaimStateBadge } from "@/components/ui/badge";
-import {
-  JOIN_MAILTO,
-  PETITION_URL,
-  SIGNATURES,
-} from "@/lib/data/petition";
+import { JOIN_MAILTO, PETITION_URL } from "@/lib/data/petition";
 import {
   targetForWeekday,
   templateForDay,
@@ -14,6 +10,7 @@ import {
 } from "@/lib/data/comments";
 import { useDesk } from "@/lib/store";
 import { dayOfYear, todayKey } from "@/lib/utils";
+import { LiveRefreshButton, LiveStatStrip } from "@/components/live-refresh";
 
 export function TodayCard() {
   const today = todayKey();
@@ -102,11 +99,10 @@ export function TodayCard() {
         </div>
       )}
 
-      <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <Stat k="Signatures" v={SIGNATURES.count.toLocaleString()} n={`as of ${SIGNATURES.asOf}`} />
-        <Stat k="Cities" v="19,000+" n="if you fight town by town" />
-        <Stat k="States" v="50" n="if you fight at the legislature" />
-      </dl>
+      <div className="mt-6">
+        <LiveStatStrip />
+      </div>
+      <LiveRefreshButton className="mt-4" />
 
       <div className="mt-5 flex flex-col gap-2 sm:flex-row">
         <Button asChild variant="primary">
@@ -119,19 +115,5 @@ export function TodayCard() {
         </Button>
       </div>
     </section>
-  );
-}
-
-function Stat({ k, v, n }: { k: string; v: string; n: string }) {
-  return (
-    <div className="rounded-md bg-bg px-3 py-3 shadow-[inset_0_0_0_1px_var(--color-rule)]">
-      <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-faint">
-        {k}
-      </dt>
-      <dd className="mt-1 font-display text-2xl font-medium tabular-nums tracking-tight">
-        {v}
-      </dd>
-      <p className="mt-1 text-xs text-muted">{n}</p>
-    </div>
   );
 }

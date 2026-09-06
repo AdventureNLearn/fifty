@@ -2,22 +2,25 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { AppShell } from "@/components/app-shell";
+import { SITE } from "@/lib/data/site";
 import appCss from "../styles.css?url";
-
-const APP_NAME = "FIFTY";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: APP_NAME },
-      {
-        name: "description",
-        content:
-          "Daily-action desk for the state-level ALPR ban. 19,000 cities. 50 states. One comment a day.",
-      },
+      { title: `${SITE.name} — ${SITE.tagline}` },
+      { name: "description", content: SITE.description },
       { name: "theme-color", content: "#0e0d0b" },
+      { property: "og:title", content: `${SITE.name} — ${SITE.tagline}` },
+      { property: "og:description", content: SITE.description },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: `${SITE.name} — ${SITE.tagline}` },
+      { name: "twitter:description", content: SITE.description },
+      { name: "twitter:image", content: "/og.jpg" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
