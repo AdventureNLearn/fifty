@@ -213,18 +213,30 @@ export const STATES: StateRow[] = [
   {
     code: "DC",
     name: "District of Columbia",
-    posture: "open",
+    posture: "statute",
     asOf: "2026-09-06",
-    alprStatute: null,
+    alprStatute:
+      "D.C. Code § 50-2443 (D.C. Law 25-325 / B25-0435, Act 25-695, eff. May 2, 2025; Act Sec. 113) — Mayor shall issue LPRS usage, privacy, security, and sharing rules. LPRS defined at § 50-2431(8). Not a collection ban. No numeric retention cap. No warrant-for-query. D.C. Law 26-120 (temp., eff. May 21, 2026) struck Sec. 113 from the subject-to-appropriations list, so the section is presently applicable. Finding Flock’s 19-state table omits DC.",
     executive: null,
-    bills: [],
-    localNote: null,
+    bills: [
+      {
+        cite: "B26-0246",
+        title: "Automated Curbside Management System Amendment Act of 2025",
+        status:
+          "Under Council Review — hearings Oct. 2025. Cites ALPRs for smart loading zones. Not a collection ban.",
+      },
+    ],
+    localNote:
+      "Not a state; Council is the legislature. MPD 2024 contract for 67 Flock ALPR systems (At-Large CM Henderson letter, Jan. 20, 2026). No named ward cancellation. MPD GO-OPS-303.09 (eff. April 30, 2026): 90-day plate-data purge.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "Not a state. Council is the legislature. No ban retrieved.",
+    privacyNote:
+      "§ 50-2443 is a rulemaking mandate, not a retention cap. MPD policy: 90-day purge, query logs 4 years, annual 1% audit. D.C. Code § 2-1461.01 bars District aid to interstate abortion/contraception/gender-care investigations.",
+    claim: "supported",
+    why: "Not a state. Council is the legislature. § 50-2443 is an LPRS usage/privacy rulemaking statute, not District-wide removal.",
+    sourceIds: ["dc-code-50-2443", "dc-law-25-325", "mpd-go-303-09", "ff-laws"],
   },
+
   {
     code: "FL",
     name: "Florida",
@@ -529,110 +541,190 @@ export const STATES: StateRow[] = [
   {
     code: "MA",
     name: "Massachusetts",
-    posture: "open",
+    posture: "bill",
     asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
-    bills: [],
-    localNote: null,
+    bills: [
+      {
+        cite: "H.3755 (194th)",
+        title: "An Act establishing driver privacy protections",
+        status:
+          "Reported favorably; referred House Ways and Means March 23, 2026 — pending. Would cap ALPR retention at 14 days and require a warrant to access another entity’s data. Not a collection ban.",
+      },
+    ],
+    localNote:
+      "Cambridge terminated its Flock contract (city statement, Dec. 10, 2025) after deactivating 16 cameras in Oct. 2025. Salem (city news, July 23, 2026) is not renewing Flock and is replacing those ALPRs with units under local data control. MSP still operates Vigilant ALPRs.",
     fundingNote: null,
-    permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    permitNote:
+      "Acts 2026 c. 140 (approved July 14, 2026) is a Cambridge-only special act authorizing parking ALPRs. Not a statewide occupancy instrument.",
+    privacyNote:
+      "No ALPR-specific statute. Commonwealth v. McCarthy (2020) held that enough ALPRs in enough places can be a constitutional search. Shield Law restricts out-of-state sharing on lawful reproductive and gender-affirming care.",
+    claim: "supported",
+    why: "Pending H.3755 would regulate retention and access. It is not law and it is not statewide removal.",
+    sourceIds: ["ma-h3755", "ma-ch140", "cambridge-flock", "ff-laws"],
   },
   {
     code: "MI",
     name: "Michigan",
-    posture: "open",
+    posture: "bill",
     asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
-    bills: [],
-    localNote: null,
-    fundingNote: null,
-    permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    bills: [
+      {
+        cite: "HB 5492 / HB 5493 (2026)",
+        title: "Regulating Automatic License Plate Readers Act (pair; tie-barred)",
+        status:
+          "Introduced Jan. 29, 2026; House Judiciary. Would cap government retention at 14 days and limit uses. Not enacted.",
+      },
+      {
+        cite: "SB 1131 (2026)",
+        title: "Guidelines for use of registration plate reader systems",
+        status:
+          "Introduced July 29, 2026; Senate Civil Rights, Judiciary, and Public Safety. Senate counterpart. Not enacted.",
+      },
+    ],
+    localNote:
+      "Ann Arbor PD does not deploy city ALPRs (AAPD, Oct. 27, 2025). Detroit PD operates readers. Among Michigan’s largest cities, only Ann Arbor has no city LPR program.",
+    fundingNote:
+      "DTMB contract MA250000000832: Flock statewide LPR solution, $2,626,000, June 3, 2025–June 3, 2030; 30-day rolling purge under MSP Policy 07-13.",
+    permitNote:
+      "MDOT still issues annual trunkline permits for LE ALPRs (instructions dated March 1, 2024). Occupancy, not a pause.",
+    privacyNote:
+      "No statewide statutory retention cap. MSP contract/Policy 07-13: 30-day rolling purge except evidence. That policy does not bind locals.",
+    claim: "supported",
+    why: "Pending 2026 bills would regulate ALPRs, not remove them. None have been enacted.",
+    sourceIds: ["mi-hb5492", "mi-sb1131", "mi-dtmb-832", "ff-laws"],
   },
   {
     code: "MN",
     name: "Minnesota",
     posture: "statute",
-    asOf: "2026-08-08",
-    alprStatute: "Minn. Stat. § 13.824 — ALPR data practices; Finding Flock reads a 60-day unmatched-read cap and a limited warrant/court-order path for some access.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "Minn. Stat. § 13.824 (2015 c. 67; 2024 c. 127 art. 3) — data-practices statute, not a collection ban. Collection limited to plate numbers, date/time/location, and pictures of plates/vehicles/surroundings. Unmatched reads destroyed no later than 60 days. Limited warrant to monitor or track a person who is the subject of an active criminal investigation. Biennial independent audit; BCA publishes agency/fixed-location list. Central state repository prohibited unless authorized by law.",
     executive: null,
-    bills: [],
-    localNote: null,
-    fundingNote: null,
-    permitNote: "Highway occupancy, if any, is a separate instrument from this data-practices statute and is not packed here as a ban.",
-    privacyNote: "Data-practices cap, not a collection ban.",
+    bills: [
+      {
+        cite: "HF 4205 / SF 4739 (94th)",
+        title: "48-hour unmatched destruction; out-of-state warrant; BCA centralization",
+        status: "Lost — House Judiciary failed 7–7 March 17, 2026; sine die May 18, 2026",
+      },
+      {
+        cite: "HF 4661 / SF 4850 (94th)",
+        title: "Third-party platform / nationwide-search amendments to § 13.824",
+        status: "Lost — referred judiciary; sine die May 18, 2026",
+      },
+    ],
+    localNote:
+      "St. Paul (Aug. 26, 2026): mayor and chief announced removal of two city-owned Flock cameras after a 7–0 nonbinding council resolution; Ramsey County Sheriff cameras inside the city were not removed. Duluth Flock contract expires Sept. 7, 2026; other ALPR continues.",
+    fundingNote:
+      "DPS Auto Theft Prevention Program grants have funded some local fixed ALPRs. Grant funding, not a pause.",
+    permitNote:
+      "Highway occupancy is a separate instrument from § 13.824 and is not packed here as a ban.",
+    privacyNote:
+      "60-day data-practices cap, not a collection ban. Ordinary queries rest on written authorization and reasonable suspicion, not a warrant for every search.",
     claim: "supported",
     why: "A 60-day data-practices rule is not statewide removal.",
-    sourceIds: ["ff-laws"],
+    sourceIds: ["mn-13-824", "mn-hf4205", "ff-laws"],
   },
   {
     code: "MS",
     name: "Mississippi",
-    posture: "open",
+    posture: "bill",
     asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
-    bills: [],
-    localNote: null,
-    fundingNote: null,
+    bills: [
+      {
+        cite: "HB 528 (2025)",
+        title: "Automated license plate recognition systems; prohibit use subject to exceptions",
+        status: "Lost — died in House Judiciary B, Feb. 4, 2025. No 2026 refile retrieved.",
+      },
+    ],
+    localNote:
+      "Jackson City Council approved a two-year Flock contract for 16 LPRs in Sept. 2024; reporting as of Sept. 1, 2026 says the ALPR contract remains in force. Oxford PD has used Flock since about 2022. Expansion, not cancellation.",
+    fundingNote:
+      "Some cities use Mississippi Office of Homeland Security grants for Flock (Bay St. Louis staff report). Not a dedicated statewide ALPR fee.",
     permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    privacyNote:
+      "Miss. Code § 17-25-19 bans automated traffic-enforcement cameras at signals; AG opinions (Chaney 2024, Turnage 2025) say investigative ALPRs are not banned. No statewide ALPR retention cap.",
+    claim: "supported",
+    why: "A 2025 House restriction died in committee. Cities including Jackson still run Flock. That is not statewide removal.",
+    sourceIds: ["ms-hb528", "ms-17-25-19", "ff-laws"],
   },
   {
     code: "MO",
     name: "Missouri",
-    posture: "open",
+    posture: "bill",
     asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
-    bills: [],
-    localNote: null,
+    bills: [
+      {
+        cite: "SB 1027 / SB 1166 (2026)",
+        title: "ALPR systems prohibition (with red-light companion in SB 1166)",
+        status: "Lost — died in Senate Transportation; sine die May 15, 2026",
+      },
+      {
+        cite: "HB 3192 (2026)",
+        title: "Missouri Automatic License Plate Reader Regulation Act",
+        status: "Lost — referred House Emerging Issues; sine die May 15, 2026",
+      },
+      {
+        cite: "HB 658 / SB 540 (2025)",
+        title: "Prohibits automated traffic enforcement and ALPRs",
+        status: "Lost — died in committee, 2025 session",
+      },
+    ],
+    localNote:
+      "Weston Board of Aldermen cancelled a Flock buy (2026). Willard Board of Aldermen voted unanimously Aug. 24, 2026 to terminate Flock. Bolivar cancelled. St. Charles County shut down its Flock network after a civilian employee used it to track an ex-partner (Aug. 2026). Columbia, Kansas City, St. Louis, and Springfield still deploy.",
     fundingNote: null,
-    permitNote: null,
+    permitNote:
+      "MoDOT EPG 941.10: ALPRs on Commission right-of-way need written DPS Director approval, then a MoDOT construction permit. Occupancy, not a pause.",
     privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    claim: "supported",
+    why: "2025 and 2026 prohibition bills died in committee. Named cities cancelled contracts. That is not statewide removal.",
+    sourceIds: ["mo-sb1027", "mo-hb3192", "ff-laws"],
   },
   {
     code: "MT",
     name: "Montana",
     posture: "statute",
-    asOf: "2026-08-08",
-    alprStatute: "Mont. Code Ann. §§ 46-5-117 to 46-5-119 — ALPR-specific. Finding Flock reads a 90-day unmatched-read cap and a limited warrant path for some access.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "Mont. Code Ann. §§ 46-5-117 to 46-5-119 (Ch. 202, L. 2017) — default prohibition on highway ALPR use by state or local agencies, with listed exceptions: MDT/city planning (anonymized), parking, weigh-station screening, fleet tracking, and law enforcement only to identify a vehicle that is stolen, associated with a wanted/missing/endangered person, registered to a person with an outstanding warrant, in commercial-trucking violation, or tied to case-specific investigation of a major crime. 46-5-118: unmatched LE captures may not be preserved more than 90 days without a sworn preservation request or a search warrant. Not a collection ban for the listed purposes.",
     executive: null,
     bills: [],
-    localNote: null,
+    localNote:
+      "Billings, Missoula, and Bozeman city/county LE have not deployed Flock; private retail ALPRs operate on private lots. No named municipal cancellation.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: "Retention and limited warrant — not a collection ban.",
+    privacyNote:
+      "90-day unmatched LE cap and limited warrant/preservation path. Match alone is not reasonable suspicion for a stop. Sale of captured data banned.",
     claim: "supported",
-    why: "A 90-day cap is not statewide removal.",
-    sourceIds: ["ff-laws"],
+    why: "A default highway-use prohibition with listed law-enforcement exceptions is not the petition’s statewide removal.",
+    sourceIds: ["mt-46-5-117", "mt-46-5-118", "ff-laws"],
   },
   {
     code: "NE",
     name: "Nebraska",
     posture: "statute",
-    asOf: "2026-08-08",
-    alprStatute: "Neb. Rev. Stat. §§ 60-3201 to 60-3209 — ALPR-specific. Finding Flock reads a 180-day unmatched-read cap.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "Neb. Rev. Stat. §§ 60-3201 to 60-3209 (Automatic License Plate Reader Privacy Act; Laws 2018, LB93) — governmental ALPR use prohibited except enumerated purposes (parking/traffic/registration/insurance violations, warrants, missing persons, stolen vehicles, ongoing criminal investigation, parking facilities, secured areas, tolls, weigh stations). Captured plate data shall not be retained more than 180 days unless evidence of a listed purpose, a preservation request, or a warrant/subpoena/court order. Hot lists refreshed at the start of each shift. Not a collection ban for the listed purposes.",
     executive: null,
     bills: [],
-    localNote: null,
+    localNote:
+      "Lincoln PD operates Axon cruiser ALPRs under G.O. 2080 citing the 180-day cap. Omaha PD and Bellevue PD file § 60-3206 reports with the Crime Commission.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: "Retention cap, not a collection ban.",
+    privacyNote:
+      "180-day unmatched-read cap. No warrant for permitted real-time matching. Captured plate data is not a public record.",
     claim: "supported",
-    why: "A 180-day cap is not statewide removal.",
-    sourceIds: ["ff-laws"],
+    why: "A 180-day cap with enumerated uses is not statewide removal.",
+    sourceIds: ["ne-60-3204", "ne-60-3203", "ff-laws"],
   },
   {
     code: "NV",
@@ -642,225 +734,286 @@ export const STATES: StateRow[] = [
     alprStatute: null,
     executive: null,
     bills: [],
-    localNote: null,
-    fundingNote: null,
+    localNote:
+      "Clark County School District Police paused Flock pending the chief’s review (Aug. 2026). LVMPD, Henderson, Reno, and Washoe County Sheriff operate ALPRs under policy. No numbered 2025–26 bill. An unnumbered 2027 Judiciary BDR was requested Aug. 25, 2026 — not packed as a bill.",
+    fundingNote:
+      "Reno used ARPA/SLFRF ($450k, Nov. 2024) for Flock. Henderson used SLFRF for 54 poles. LVMPD expansion via foundation gifts. Not a statewide ALPR fee.",
     permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    privacyNote:
+      "NRS 484A.600 bars governmental photo/video for traffic citations except listed equipment; it is not an ALPR retention or search statute.",
+    claim: "supported",
+    why: "No ALPR statute or numbered bill retrieved. Named locals operate on policy. That is not statewide removal.",
+    sourceIds: ["nv-nrs-484a600", "nv-judiciary-34855", "ff-laws"],
   },
   {
     code: "NH",
     name: "New Hampshire",
     posture: "statute",
-    asOf: "2026-06-29",
-    alprStatute: "RSA 261:75-b — unmatched plate reads purged within three minutes unless the capture leads to arrest, citation, protective custody, or a missing/wanted match. Attended devices; audit trail required.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "RSA 261:75-b — LPRs restricted to local, county, and state law enforcement. Unmatched plate records shall be purged within 3 minutes unless an alarm resulted in arrest, citation, protective custody, or a missing/wanted match. RSA 259:68-a defines an LPR as vehicle-mounted and attended by an officer. 2016 sunset (Jan. 1, 2027) was repealed by 2026 HB 1059 / Chapter 88 (signed May 28, 2026). Attended devices; audit trail required.",
     executive: null,
     bills: [],
-    localNote: null,
+    localNote:
+      "NH State Police told WMUR (Sept. 1, 2026) it has no Flock cameras. Concord DOC Flock Raven units near prisons are not ALPRs per the department.",
     fundingNote: null,
-    permitNote: null,
-    privacyNote: "Shortest unmatched-read deletion retrieved in this briefing. Still not a collection ban for the devices the statute allows.",
+    permitNote:
+      "RSA 261:75-b, III and Saf-C 7200: each agency must register every LPR with the Department of Safety before deployment.",
+    privacyNote:
+      "Shortest unmatched-read deletion retrieved in this briefing. Still not a collection ban for the attended devices the statute allows. RSA 236:130 bans highway surveillance except where specifically authorized; 261:75-b is that authorization.",
     claim: "supported",
     why: "Three-minute unmatched deletion is the tightest retrieved cap. The petition asks for removal.",
-    sourceIds: ["nh-rsa-261", "aclu-fight", "ff-laws"],
+    sourceIds: ["nh-rsa-261", "nh-hb1059", "ff-laws"],
   },
   {
     code: "NJ",
     name: "New Jersey",
-    posture: "local",
-    asOf: "2026-08-14",
-    alprStatute: null,
-    executive: null,
-    bills: [],
-    localNote: "Princeton resident petition to ban Flock/ALPR (police say the township does not use Flock). Camden County: DeFlock South Jersey organizing around active cameras.",
+    posture: "statute",
+    asOf: "2026-09-06",
+    alprStatute:
+      "P.L.2026, c.4 (Privacy Protection Act, A4070, signed March 25, 2026) — government entities may not sell, share, or transfer ALPR data except to another government entity when permitted by law, a court order/warrant, written consent, or out-of-state LE for a criminal investigation with written certification against civil-immigration use. Not a collection ban and no statewide retention cap.",
+    executive:
+      "AG Law Enforcement Directive 2022-12 (Platkin; effective Jan. 23, 2023): official LE use only; 3-year retention; statewide API sharing (NJ SNAP); annual audits. Operational policy, not a pause.",
+    bills: [
+      {
+        cite: "S3035 / A2594 (2026)",
+        title: "ALPR requirements; 2-year retention; annual audits",
+        status: "Introduced Jan. 13, 2026; in committee",
+      },
+      {
+        cite: "S1290 (2026)",
+        title: "Bar ALPR share for interstate reproductive-care cases",
+        status: "Reported Senate LPS; referred Budget & Appropriations Feb. 19, 2026",
+      },
+    ],
+    localNote:
+      "Princeton resident petition is not a council vote; police say the township does not use Flock. Shamong Township introduced a one-year moratorium Sept. 2, 2026; public hearing Oct. 6, 2026 — not adopted. No named cancellation retrieved.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: null,
+    privacyNote:
+      "Sharing limits in P.L.2026, c.4 plus a 3-year AG-directive retention clock. Neither is statewide removal.",
     claim: "supported",
-    why: "Local organizing retrieved. No statewide ban retrieved.",
+    why: "A 2026 sharing statute is not statewide removal. Collection remains lawful.",
+    sourceIds: ["nj-pl2026-c4", "nj-ag-2022-12", "nj-s3035", "ff-laws"],
   },
   {
     code: "NM",
     name: "New Mexico",
     posture: "statute",
-    asOf: "2026-08-08",
-    alprStatute: "2026 N.M. Laws ch. 20 (SB 40, Driver Privacy and Safety Act) — ALPR-specific. Finding Flock reads no numeric unmatched-read cap in the enrolled act.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "2026 N.M. Laws ch. 20 (SB 40, Driver Privacy and Safety Act, signed March 4, 2026, eff. July 1, 2026) — ALPR users may not sell, share, or allow access to plate data where they have reasonable belief it may be used for immigration enforcement, to investigate protected health care activity, or to penalize constitutionally protected activity. Out-of-state agencies must file a written declaration. No numeric unmatched-read cap. Not a collection ban.",
     executive: null,
-    bills: [
-      {
-        cite: "SB 40",
-        title: "Driver Privacy and Safety Act",
-        status: "Enacted 2026 (ch. 20)",
-      },
-    ],
-    localNote: null,
+    bills: [],
+    localNote:
+      "Albuquerque and Rio Rancho operate ALPRs. APD reported a 1-year local retention; Bernalillo County Sheriff reported 30 days. Local policy, not statewide removal.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: "Newly enacted use/privacy statute. Not packed here as a collection ban.",
+    privacyNote:
+      "Sharing/purpose statute, not a retention cap and not a collection ban. Intentional violations: $10,000 or actual damages.",
     claim: "supported",
     why: "A 2026 privacy act is not statewide removal.",
-    sourceIds: ["ff-laws"],
+    sourceIds: ["nm-sb40", "ff-laws"],
   },
+
   {
     code: "NY",
     name: "New York",
     posture: "local",
-    asOf: "2026-06-03",
+    asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
     bills: [],
-    localNote: "Saranac Lake residents voted to ban Flock (Mar 2026). Ithaca listed among contract endings.",
+    localNote:
+      "Saranac Lake village board voted 4–1 (March 2026) to terminate its Flock contract and ban further Flock installation. Ithaca Common Council voted unanimously (March 2026) to end the city’s Flock contract. Tompkins County Legislature voted 12–1 in April 2026 to end the county contract. No statewide ban retrieved.",
     fundingNote: null,
     permitNote: null,
     privacyNote: null,
     claim: "supported",
-    why: "Village and city actions. No statewide ban retrieved.",
+    why: "Village, city, and county actions. No statewide ban retrieved.",
+    sourceIds: ["ny-saranac", "ny-ithaca", "ny-tompkins", "ff-laws"],
   },
+
   {
     code: "NC",
     name: "North Carolina",
     posture: "statute",
-    asOf: "2026-08-08",
-    alprStatute: "N.C. Gen. Stat. §§ 20-183.30 to 20-183.32 — ALPR-specific. Finding Flock reads a 90-day unmatched-read cap and a limited warrant path for some access.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "N.C. Gen. Stat. §§ 20-183.30 to 20-183.32 (Article 3D) — agencies must adopt a written policy before ALPRs are operational. Captured plate data shall not be preserved more than 90 days unless a preservation request, a state search warrant, or a federal search warrant. Data is confidential, not a public record, and may not be sold. Access limited to a criminal justice officer for a legitimate law-enforcement purpose on a written request. Not a collection ban.",
     executive: null,
     bills: [],
     localNote: null,
     fundingNote: null,
     permitNote: null,
-    privacyNote: "Retention and limited warrant — not a collection ban.",
+    privacyNote:
+      "90-day unmatched cap with warrant/preservation carve-outs. Not a collection ban.",
     claim: "supported",
-    why: "A 90-day cap is not statewide removal.",
-    sourceIds: ["ff-laws"],
+    why: "A 90-day unmatched-read cap is not the petition’s statewide removal.",
+    sourceIds: ["nc-20-183-32", "nc-20-183-30", "ff-laws"],
   },
+
   {
     code: "ND",
     name: "North Dakota",
-    posture: "open",
+    posture: "bill",
     asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
-    bills: [],
-    localNote: null,
+    bills: [
+      {
+        cite: "HB 1050 (2025)",
+        title: "Cooperative agreements for license plate readers on NDDOT equipment",
+        status:
+          "Lost — failed on the House floor Jan. 28, 2025, 42–51 (House Transportation DO NOT PASS 14–0). Would have required DOT, on request, to place ALPRs on department infrastructure. An authorization bill, not a ban.",
+      },
+    ],
+    localNote:
+      "Fargo PD Policy 428 (rev. March 25, 2025) governs department ALPRs: hot-list review at 30 days; captured data purged unless converted to evidence. Department policy, not a city ordinance. NDDOT historically declined pole placements for Bismarck PD, Fargo PD, and Border Patrol (HB 1050 testimony).",
     fundingNote: null,
     permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    privacyNote:
+      "NDCC § 29-29.4-01(8) excludes license plate readers from the UAV/robot warrant chapter. That carve-out is not an ALPR-use statute. No statewide retention cap.",
+    claim: "supported",
+    why: "A 2025 DOT-placement bill died on the House floor. North Dakota has no ALPR statute and no statewide removal.",
+    sourceIds: ["nd-hb1050", "nd-fargo-428", "ff-laws"],
   },
+
   {
     code: "OH",
     name: "Ohio",
     posture: "local",
-    asOf: "2026-06-03",
+    asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
     bills: [],
-    localNote: "Dayton covered 72 fixed-site cameras after finding data use (including immigration-enforcement sharing) violated city policy.",
+    localNote:
+      "Dayton suspended its fixed-site Flock program and covered 72 cameras after finding data use (including immigration-enforcement sharing) violated city policy. City FAQ (updated 2026): program remains suspended pending independent review. Not a state ban.",
     fundingNote: null,
     permitNote: null,
     privacyNote: "Local policy, not a state warrant rule.",
     claim: "supported",
-    why: "A city disable is not a state ban.",
+    why: "Dayton’s fixed-site program remains suspended. That is one city, not a state ban.",
+    sourceIds: ["oh-dayton-faq", "ff-laws"],
   },
+
   {
     code: "OK",
     name: "Oklahoma",
-    posture: "open",
+    posture: "statute",
     asOf: "2026-09-06",
-    alprStatute: null,
+    alprStatute:
+      "47 O.S. § 7-606.1 (Uninsured Vehicle Enforcement Program, 2017) — authorizes district attorneys and participating LE agencies to contract with ALPR providers to detect uninsured motorists. Data shall not be used except to enforce the Compulsory Insurance Law or as otherwise permitted by law. Sale of captured plate data banned. Not a collection ban; it is an authorization statute for a listed purpose.",
     executive: null,
     bills: [],
     localNote: null,
     fundingNote: null,
     permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    privacyNote:
+      "Program-specific use limits, not a statewide unmatched-read cap and not a collection ban for other lawful uses.",
+    claim: "supported",
+    why: "An uninsured-motorist ALPR authorization is not statewide removal.",
+    sourceIds: ["ok-47-76061", "ff-laws"],
   },
+
   {
     code: "OR",
     name: "Oregon",
     posture: "statute",
-    asOf: "2026-08-08",
-    alprStatute: "Or. Laws 2026, ch. 77 (SB 1516) — ALPR-specific. Finding Flock reads a 30-day unmatched-read cap.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "Or. Laws 2026, ch. 77 (SB 1516, signed March 31, 2026, effective immediately) — law-enforcement ALPR use limited to listed purposes. Captured plate data not related to a court proceeding or ongoing criminal investigation may be retained no more than 30 days. Sharing with non-Oregon government entities limited to a case-specific law-enforcement purpose. Vendors may not sell or disclose the data, must encrypt it, and must supply audits. Not a collection ban.",
     executive: null,
-    bills: [
-      {
-        cite: "SB 1516",
-        title: "ALPR use and retention",
-        status: "Enacted 2026 (ch. 77)",
-      },
-    ],
-    localNote: null,
+    bills: [],
+    localNote:
+      "Portland Police Bureau revised its ALPR directive (April 2026) to match SB 1516: 30-day unmatched retention.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: "Newly enacted 30-day cap. Not a collection ban.",
+    privacyNote:
+      "Newly enacted 30-day cap plus vendor and sharing limits. Not a collection ban.",
     claim: "supported",
-    why: "A 30-day cap is not statewide removal.",
-    sourceIds: ["ff-laws"],
+    why: "A newly enacted 30-day unmatched-read cap is not the petition’s statewide removal.",
+    sourceIds: ["or-ch77", "ff-laws"],
   },
+
   {
     code: "PA",
     name: "Pennsylvania",
-    posture: "bill",
-    asOf: "2026-08-28",
+    posture: "open",
+    asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
+    bills: [],
+    localNote: null,
+    fundingNote: null,
+    permitNote: null,
+    privacyNote:
+      "Sens. Laughlin (memo 49153), Mastriano (memo 49155), and Boscola circulated co-sponsorship memos Aug. 27, 2026. Official Senate pages: “This document has not been submitted for introduction yet.” A caucus memo is not a bill. Gov. Shapiro has publicly backed a Flock ban — a statement, not an instrument.",
+    claim: "supported",
+    why: "Memos and a gubernatorial statement are real. Enacted law is not. The petition is the statewide ask while bills cook.",
+    sourceIds: ["pa-memo-49153", "pa-memo-49155", "pa-bills"],
+  },
+
+  {
+    code: "RI",
+    name: "Rhode Island",
+    posture: "exec-pause",
+    asOf: "2026-09-06",
+    alprStatute: null,
+    executive:
+      "Gov. Dan McKee press release Aug. 18, 2026: called for a statewide pause on installation and activation of any new ALPR cameras; directed DPS/State Police, in consultation with the Police Chiefs’ Association and League of Cities and Towns, to complete a 60-day review of uniform statewide standards. State Police will not install or activate additional ALPRs during the review. Existing State Police ALPRs may continue. Urges municipalities to pause new installs. Not a removal of cameras already up.",
     bills: [
       {
-        cite: "Laughlin memo",
-        title: "Prohibit ALPRs connected to a network that auto-identifies and stores vehicle information",
-        status: "Co-sponsorship memo, not packed as introduced",
-      },
-      {
-        cite: "Mastriano memo",
-        title: "Prohibit mass, suspicionless collection and retention of movements",
-        status: "Co-sponsorship memo",
-      },
-      {
-        cite: "Boscola memo",
-        title: "Ban unauthorized / personal use of ALPR and automated surveillance",
-        status: "Co-sponsorship memo",
+        cite: "H 8077 (2026)",
+        title: "Criminal Procedure — Automated License Plate Readers",
+        status:
+          "Lost — introduced Feb. 27, 2026; House Judiciary held for further study; died in committee (session ended June 11, 2026). Would have capped storage at 21 days. Not enacted.",
       },
     ],
     localNote: null,
     fundingNote: null,
     permitNote: null,
-    privacyNote: "Five-proposal pile in the General Assembly as of Aug 2026. Range from network ban to misuse ban.",
+    privacyNote:
+      "No ALPR-specific retention statute on the books. The pause covers new installs, not existing cameras.",
     claim: "supported",
-    why: "Memos are real. Enacted law is not. The petition is the statewide ask while bills cook.",
-    sourceIds: ["pa-bills"],
+    why: "A pause on new installs is real. It is not statewide removal of cameras already up.",
+    sourceIds: ["ri-mckee-2026-08-18", "ri-h8077", "ff-laws"],
   },
-  {
-    code: "RI",
-    name: "Rhode Island",
-    posture: "open",
-    asOf: "2026-09-06",
-    alprStatute: null,
-    executive: null,
-    bills: [],
-    localNote: null,
-    fundingNote: null,
-    permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
-  },
+
   {
     code: "SC",
     name: "South Carolina",
-    posture: "open",
+    posture: "bill",
     asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
-    bills: [],
+    bills: [
+      {
+        cite: "S. 447 (2025–26)",
+        title: "License plate reader system (proposed § 23-1-235; 90-day cap; SCDOT ROW permit)",
+        status:
+          "Lost — favorable Senate Judiciary report Apr. 9, 2026; no floor vote before May 14 sine die",
+      },
+      {
+        cite: "H. 3155 (2025–26)",
+        title: "Automatic license plate readers (companion to S. 447)",
+        status: "Lost — referred to House Judiciary Jan. 14, 2025; no further action",
+      },
+      {
+        cite: "H. 4675 (2026)",
+        title:
+          "South Carolina Community Data Protection and Responsible Surveillance Act (21-day cap; warrant-for-query; third-party storage ban)",
+        status: "Lost — referred to House Judiciary Jan. 13, 2026; no further action",
+      },
+    ],
     localNote: null,
-    fundingNote: null,
+    fundingNote:
+      "H. 3305 / Act 261 of 2026 (approved Sept. 1, 2026), SECTION 1(B)(47)(h): Town of Cameron — License Plate Reading Camera, $35,000. A state earmark that buys cameras, not a ban.",
     permitNote: null,
     privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    claim: "supported",
+    why: "Lost 2025–26 ALPR bills never became law. South Carolina has no ALPR statute. An earmark that buys cameras is not statewide removal.",
+    sourceIds: ["sc-s447", "sc-h3155", "sc-h4675", "sc-h3305", "sc-code-t23c1", "ff-laws"],
   },
   {
     code: "SD",
@@ -870,29 +1023,36 @@ export const STATES: StateRow[] = [
     alprStatute: null,
     executive: null,
     bills: [],
-    localNote: null,
+    localNote:
+      "Sioux Falls PD Policy #1036 (city page) runs Flock under a 30-day department retention rule — policy, not an ordinance. Rapid City PD deployed Axon ALPRs (April 2026). Aberdeen’s mayor declined installation (Aug. 2026). Minnehaha County’s motion to terminate Flock failed Sept. 1, 2026. No packed local ban ordinance.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    privacyNote:
+      "AG Jackley (Aug. 12, 2026) announced intent to propose 2027-session LPR safeguards. No bill number. A press release is not a bill. SDCL 32-28-17 bans red-light photo-monitoring contracts, not ALPRs.",
+    claim: "supported",
+    why: "No ALPR statute or 2025–26 bill retrieved. Collection remains a local fight.",
+    sourceIds: ["sd-ag-3134", "sd-sf-alpr", "ff-laws"],
   },
+
   {
     code: "TN",
     name: "Tennessee",
     posture: "statute",
-    asOf: "2026-09-04",
-    alprStatute: "Tenn. Code Ann. § 55-10-302 — ALPR-specific. Finding Flock reads a 90-day unmatched-read cap.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "Tenn. Code Ann. § 55-10-302 (Acts 2014, ch. 625) — captured plate data collected by a governmental entity through an ALPR may not be stored more than 90 days unless retained as part of an ongoing investigation, and then shall be destroyed at the conclusion of the investigation or any criminal action. Applies only to government entities. Not a collection ban.",
     executive: null,
     bills: [],
-    localNote: "Knox County Commission voted unanimously on 31 Aug 2026 to shut down 143 Flock cameras; ordinance gave agencies 30 days to cease, disable, and remove, and to delete data not part of an ongoing investigation.",
+    localNote:
+      "Knox County Commission voted unanimously on Aug. 31, 2026 to shut down 143 Flock cameras; ordinance gave agencies 30 days to cease, disable, and remove, and to delete data not part of an ongoing investigation.",
     fundingNote: null,
     permitNote: null,
     privacyNote: "A 90-day cap is not a collection ban. A county ordinance is one of 95 counties.",
     claim: "supported",
     why: "Statewide retention rule plus a county removal. Statewide remaining.",
-    sourceIds: ["ff-laws", "knox-ban"],
+    sourceIds: ["tn-55-10-302", "knox-ban", "ff-laws"],
   },
+
   {
     code: "TX",
     name: "Texas",
@@ -900,28 +1060,25 @@ export const STATES: StateRow[] = [
     asOf: "2026-09-06",
     alprStatute: null,
     executive:
-      "Governor directed police departments to stop spending state money on Flock cameras (week of 31 Aug 2026). Spokesperson: federal funds are the bulk of remaining local money; Texas agencies clarifying state funds cannot be used for Flock.",
-    bills: [
-      {
-        cite: "Rep. Mitch Little (statement)",
-        title: "Would consider a statewide ban despite police popularity",
-        status: "Statement, not a packed bill number",
-      },
-    ],
-    localNote: "Austin listed among large cities that lost or ended Flock contracts (Jan 2026 tracker).",
+      "Governor directed state agencies to stop spending state money on Flock cameras (week of Aug. 27, 2026; spokesman Andrew Mahaleris). The signed instrument has not been retrieved as a numbered executive order. Texas Tribune (Sept. 4, 2026): DPS will pause installing additional cameras but continue using existing ones. The directive does not, by its terms, unplug city or county cameras funded federally.",
+    bills: [],
+    localNote:
+      "Austin listed among large cities that lost or ended Flock contracts (Jan. 2026 tracker). Cities remain the local fight.",
     fundingNote:
       "Motor Vehicle Crime Prevention Authority turned a $1 insurance-fee hike into ≥3,200 cameras: 95 grants ~2,000 cameras plus $15.9M to DPS for ~1,200 more; another $3M for 583 tollway cameras approved in August before the pause.",
-    permitNote: "Highway occupancy, if any, is a separate instrument from the state-money pause and is not packed here as a ban.",
-    privacyNote: "A Texas sheriff’s use of ALPR data to track a woman who had an abortion is cited in ACLU 2026 materials.",
+    permitNote:
+      "Highway occupancy, if any, is a separate instrument from the state-money pause and is not packed here as a ban.",
+    privacyNote: null,
     claim: "supported",
-    why: "State-money pause is real. The fee that built the network is real. A ban is not law.",
-    sourceIds: ["tx-insurance-fee", "nyt-red-states", "banflock-tracker"],
+    why: "State-money pause is real. The fee that built the network is real. A ban is not law. Existing DPS cameras remain.",
+    sourceIds: ["tx-insurance-fee", "tx-tribune-2026-09-04", "nyt-red-states"],
   },
+
   {
     code: "UT",
     name: "Utah",
     posture: "statute",
-    asOf: "2026-08-08",
+    asOf: "2026-09-06",
     alprStatute: "Utah Code §§ 41-6a-2001 to 41-6a-2005 — Automatic License Plate Reader System Act. Governmental use banned except listed purposes (active investigation, warrant, missing/endangered, stolen vehicle, parking, toll, motor carrier, etc.). Finding Flock reads a 9-month unmatched-read cap. Stationary devices on state highways need a UDOT special-use permit (72-1-212).",
     executive: null,
     bills: [],
@@ -937,39 +1094,45 @@ export const STATES: StateRow[] = [
     code: "VT",
     name: "Vermont",
     posture: "statute",
-    asOf: "2026-08-08",
-    alprStatute: "23 V.S.A. § 1607 — ALPR-specific. Finding Flock reads an 18-month unmatched-read cap and a limited warrant path for some access.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "23 V.S.A. § 1607 (automated license plate recognition systems; current text effective July 1, 2025) — ALPR use and active-data access restricted to legitimate law-enforcement purposes. Information gathered shall be retained only 18 months, then destroyed. Queries of active data require specific and articulable facts. After six months, historical data release under warrant or court order. DPS maintains the statewide storage system. Not a collection ban for permitted uses.",
     executive: null,
     bills: [],
-    localNote: null,
+    localNote:
+      "Vermont State Police told a 2026 public-records requester that no law-enforcement agencies in the state are utilizing LPRs. Reporting (VTDigger/Governing, 2026) describes out-of-state Flock-network access as a statutory gray area. In-state collection remains tightly capped if it resumes.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: "Long retention ceiling. Not a collection ban.",
+    privacyNote: "18-month ceiling with a limited warrant path for historical data. Not a collection ban.",
     claim: "supported",
     why: "An 18-month cap is not statewide removal.",
-    sourceIds: ["ff-laws"],
+    sourceIds: ["vt-1607", "ff-laws"],
   },
+
   {
     code: "VA",
     name: "Virginia",
     posture: "statute",
-    asOf: "2026-08-08",
-    alprStatute: "Va. Code § 2.2-5517 (HB 2724, effective 1 Jul 2025) — ALPR-specific. Finding Flock reads a 21-day unmatched-read cap. An ALPR alert alone is not reasonable suspicion for a stop.",
+    asOf: "2026-09-06",
+    alprStatute:
+      "Va. Code § 2.2-5517 (HB 2724 / 2025 Acts ch. 720, effective July 1, 2025) — law-enforcement ALPR use limited to criminal investigation with reasonable suspicion, missing/endangered/human-trafficking cases, or hot-list notifications (wanted, stolen vehicle/plate). Purge system data 21 days after capture unless part of an ongoing investigation, prosecution, or civil action. An ALPR alert alone is not reasonable suspicion for a stop. No sale; no share with other-state, federal, private, or commercial databases. Willful misuse is a Class 1 misdemeanor. Not a collection ban.",
     executive: null,
     bills: [],
     localNote: null,
     fundingNote: null,
     permitNote: null,
-    privacyNote: "21-day cap and query limits. Not a collection ban.",
+    privacyNote:
+      "21-day cap, query limits, and a no-federal-share rule. Not a collection ban.",
     claim: "supported",
-    why: "A 21-day cap is not statewide removal.",
-    sourceIds: ["ff-laws"],
+    why: "A 21-day cap with listed uses is not the petition’s statewide removal.",
+    sourceIds: ["va-2-2-5517", "ff-laws"],
   },
+
   {
     code: "WA",
     name: "Washington",
     posture: "statute",
-    asOf: "2026-06-09",
+    asOf: "2026-09-06",
     alprStatute: "ESSB 6002 / C 239 L 26, Driver Privacy Act (ch. 10.130 RCW), effective 30 Mar 2026 — 21-day unmatched-read deletion; no collection at listed sensitive places (health care, K–12, worship, courts, food banks among them); agencies may not buy or sell ALPR data; privately held ALPR data only under a probable-cause warrant; a positive match alone does not justify a stop.",
     executive: null,
     bills: [
@@ -991,53 +1154,82 @@ export const STATES: StateRow[] = [
     code: "WV",
     name: "West Virginia",
     posture: "bill",
-    asOf: "2026-07-28",
+    asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
     bills: [
       {
-        cite: "Fourth Amendment Restoration Act",
-        title: "Ban ALPRs, face recognition, drones; reintroduction planned by Freedom Caucus",
-        status: "Failed to reach the Governor two consecutive years; caucus says it will reintroduce",
+        cite: "HB 4682 (2026)",
+        title: "Fourth Amendment Restoration Act",
+        status:
+          "Lost — introduced Jan. 21, 2026; remained in House Judiciary through sine die (March 14, 2026). Would prohibit specified warrantless surveillance technologies including ALPRs. Freedom Caucus says prior versions failed to reach the Governor two consecutive years.",
       },
     ],
-    localNote: "Caucus called on municipalities to remove ALPRs immediately — a request, not a packed municipal roster.",
+    localNote:
+      "Caucus called on municipalities to remove ALPRs immediately — a request, not a packed municipal roster.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: "The caucus frames Flock, ALPR, face recognition, and gun-detection software as a single Fourth Amendment problem.",
+    privacyNote: null,
     claim: "supported",
-    why: "A twice-failed ban is still the closest retrieved statewide removal vehicle. Reintroduction is the 2026 play.",
-    sourceIds: ["fox-wv"],
+    why: "A numbered 2026 ban bill is the closest retrieved statewide removal vehicle. It is not law.",
+    sourceIds: ["wv-hb4682", "fox-wv"],
   },
+
   {
     code: "WI",
     name: "Wisconsin",
-    posture: "open",
+    posture: "bill",
     asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
-    bills: [],
-    localNote: null,
+    bills: [
+      {
+        cite: "AB 883 (2025–26)",
+        title: "Limiting the use of automatic registration plate readers",
+        status:
+          "Lost — failed to pass pursuant to Senate Joint Resolution 1, March 23, 2026. Would have banned ALPRs with parking, secured-area, and commercial-vehicle exceptions. Not enacted.",
+      },
+    ],
+    localNote:
+      "Fond du Lac County (Sheriff Waldschmidt and chiefs of Fond du Lac, North Fond du Lac, Ripon, Waupun) and Winnebago County (sheriff plus Fox Crossing, Menasha, Neenah, UW-Oshkosh, Winneconne) ceased Flock countywide Sept. 5, 2026 after other states disclosed their search data in open-records releases.",
     fundingNote: null,
     permitNote: null,
-    privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    privacyNote:
+      "No Wisconsin ALPR statute retrieved. Defense-bar writing (2026) states no appellate decision and no statewide retention clock.",
+    claim: "supported",
+    why: "A pending ban bill and named county drop-offs are not statewide removal.",
+    sourceIds: ["wi-ab883", "wi-wbay-2026-09-05", "ff-laws"],
   },
+
   {
     code: "WY",
     name: "Wyoming",
-    posture: "open",
+    posture: "bill",
     asOf: "2026-09-06",
     alprStatute: null,
     executive: null,
-    bills: [],
-    localNote: null,
+    bills: [
+      {
+        cite: "HB0181 (2026)",
+        title: "Biometric data and license plate readers-regulation",
+        status:
+          "Lost — 2026 Budget Session; H Received for Introduction Feb. 11, 2026; H Did not Consider for Introduction Feb. 13, 2026. Would have created W.S. 9-30-101 to -107 (ALPR warrant, 7-day non-investigative retention). Not enacted.",
+      },
+    ],
+    localNote:
+      "Cheyenne purchased Flock ALPRs (Finance Committee Nov. 18, 2024, ARPA; Mayor Collins Feb. 6, 2026 and Cheyenne WY PD Flock portal as of Sept. 4, 2026: 23 cameras, 30-day retention). Jackson Town Council contracted Flock; PD Policy 9.29 purges LPR data after 90 days. Green River City Council voted 6–1 on July 7, 2026 against a Wyoming Office of Homeland Security / DHS grant for Motorola ALPRs.",
     fundingNote: null,
     permitNote: null,
     privacyNote: null,
-    claim: "unproven",
-    why: "No statewide ALPR action retrieved.",
+    claim: "supported",
+    why: "HB0181 died without introduction. Named city Flock contracts and a Green River refusal are not statewide removal.",
+    sourceIds: [
+      "wy-hb0181",
+      "jackson-lpr-929",
+      "cheyenne-fc-2024-11-18",
+      "wyofile-green-river-2026-07-14",
+      "ff-laws",
+    ],
   },
 ];
 
