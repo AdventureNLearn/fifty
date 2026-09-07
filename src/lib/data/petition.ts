@@ -1,5 +1,5 @@
 export const PETITION_URL = "https://orwellday.com/stop-flock-solution/";
-export const JOIN_EMAIL = "orwellday@protonmail.com";
+export const JOIN_EMAIL = "join@example.com";
 export const JOIN_SUBJECT = "petition promotion";
 export const JOIN_MAILTO = `mailto:${JOIN_EMAIL}?subject=${encodeURIComponent(JOIN_SUBJECT)}`;
 export const RECRUIT_POST =
